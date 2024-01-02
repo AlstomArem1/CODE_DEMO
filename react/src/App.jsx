@@ -12,7 +12,7 @@ import Order from "./compenentes/order/Order";
 import Scrolltop from "./compenentes/boostrap/scrolltotop/Scrolltotop";
 import Contact from "./compenentes/contact/Contact";
 import Protected from "./Protected";
-
+import Checkout from "./compenentes/pay/Pay"
 function App() {
   return (
     <div className="App">
@@ -28,6 +28,7 @@ function App() {
           <Route path="/signup" element={<SignUp />}></Route>
           <Route path="/tracuu" element={< Protected Cmp={Order}/>}></Route>
           <Route path="/contact" element={< Protected Cmp={Contact}/>}></Route>
+          <Route path="/checkout" element={< Protected Cmp={Checkout}/>}></Route>
         </Routes>
         <Scrolltop/>
         <Footer />

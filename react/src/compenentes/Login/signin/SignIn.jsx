@@ -11,6 +11,7 @@ import { useState } from 'react';
 
 function SignIn() {
     const [email, setEmail] = useState("");
+    const [name, setName] = useState("");
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState([]);
     const [error, setError] = useState([]);
@@ -38,12 +39,13 @@ function SignIn() {
 
 
         try{
-            console.warn(email, password)
+            console.warn(name, email, password)
             // let item = {email, password};
-            let result = await axios.post("http://localhost:8000/api/login", {email, password});
+            let result = await axios.post("http://localhost:8000/api/login", {name, email, password});
+            setName("");
             setEmail("");
             setPassword("");
-            // navigate("/home");
+            navigate("/home");
             localStorage.setItem('user-info', JSON.stringify(result))
 
         }
@@ -54,6 +56,7 @@ function SignIn() {
 
 
         }
+
     }
 
 

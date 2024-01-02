@@ -57,7 +57,7 @@
 .pay .pay-box .Qi-cart {
     display: flex;
     width: 100%;
-    height: 40px;
+    height: 100%;
     justify-content: space-around;
     /* border: 1px solid rebeccapurple; */
 
@@ -82,71 +82,101 @@
     border-start-end-radius: 9px;
     border-start-start-radius: 9px;
 }
-
-.pay .pay-box .mau-bitcart {
-    background: #bdd4cc;
-    padding: 10px 5px;
-    border-end-end-radius: 9px;
-    border-end-start-radius: 9px;
-    border-start-start-radius: 9px;
-}
-
-.pay .pay-box .mau-bitcart .debit-cart {
+.pay .pay-box .box_center_checkout{
+    height: 100%;
     width: 100%;
-    padding: 0px 35px;
-    text-align: start;
+    /* border: 1px solid sandybrown; */
+    display: flex;
 }
 
-.pay .pay-box .mau-bitcart .debit-cart button {
-    border: none;
-    border-radius: 9px;
-    border: 2px solid rgb(64, 226, 218);
-    padding: 5px 20px;
-    margin-left: 5px;
-    margin-bottom: 10px;
-    background: #f1eeee;
-}
+.pay .pay-box .box_center_checkout .checkout_left{
+    /* border: 1px solid blue; */
+    width: 50%;
+    margin: 5px 5px;
+    font-size: 15px;
 
-.pay .pay-box .mau-bitcart .debit-cart p {
-    margin-bottom: 5px;
 }
+.pay .pay-box .box_center_checkout .checkout_right{
+    /* border: 1px solid blue; */
+    /* overflow: hidden; */
 
-.pay .pay-box .mau-bitcart .rastaurant {
-    width: 100%;
+    width: 50%;
+    margin: 5px 5px;
+}
+.pay .pay-box .box_center_checkout .checkout_left .checkout_NameFull{
+    /* border: 1px solid greenyellow; */
     display: flex;
     justify-content: center;
-}
 
-.pay .pay-box .mau-bitcart .rastaurant input {
-    width: 90%;
-    height: 40px;
-    padding-left: 10px;
-    border: none;
-    border-radius: 9px;
 }
-
-.pay .pay-box .mau-bitcart .pay-code {
+.pay .pay-box .box_center_checkout .checkout_left .checkout_NameFull .Namefull_label{
     display: flex;
-    justify-content: space-around;
-    width: 100%;
-    margin: 20px 0px;
-}
+    flex-direction: column;
+    align-items: center;
 
-.pay .pay-box .mau-bitcart .pay-code label {
-    width: 100%;
+
+}
+.pay .pay-box .box_center_checkout .checkout_left .checkout_NameFull .Namefull_label .name-all{
+    width: 90%;
     text-align: start;
 
 }
-
-.pay .pay-box .mau-bitcart .pay-code input {
-    width: 100%;
-    height: 40px;
-    padding-left: 5px;
-    border: none;
-    border-radius: 9px;
-
+.pay .pay-box .box_center_checkout .checkout_left .checkout_NameFull .Namefull_label input{
+    width: 90%;
 }
 
+.pay .pay-box .box_center_checkout .checkout_left .checkout_all_input{
+    /* border: 1px solid rebeccapurple; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.pay .pay-box .box_center_checkout .checkout_left .checkout_all_input .col-ed{
+    width: 95%;
+    text-align: start;
+}
+.pay .pay-box .box_center_checkout .checkout_left .checkout_all_input input{
+    width: 95%;
+
+}
+.pay .pay-box .box_center_checkout .checkout_right .checkuot_products{
+    display: flex;
+    width: 100%;
+    height: 15%;
+    /* border: 1px solid red; */
+}
+.pay .pay-box .box_center_checkout .checkout_right .checkuot_products .sol_rt1{
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid blueviolet; */
+}
+.pay .pay-box .box_center_checkout .checkout_right .checkuot_products .sol_rt1 p{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2px 2px;
+    /* border-bottom: 1px solid black; */
+
+}
+.pay .pay-box .box_center_checkout .checkout_right .checkuot_products .sol_rt2{
+    width: 100%;
+    height: 100%;
+    background: rgb(26, 25, 25);
+    margin: 0px 1px;
+    /* border: 1px solid blueviolet; */
+}
+.pay .pay-box .box_center_checkout .checkout_right .checkuot_products .sol_rt2 p{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    color: #fff;
+
+}
 .pay .pay-box .cart-buynow {
     width: 100%;
     margin: 20px 10px;

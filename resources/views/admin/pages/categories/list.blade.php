@@ -64,7 +64,7 @@
                                             <th style="width: 10px">#</th>
                                             <th>Name</th>
                                             <th>Status</th>
-                                            <th>place of birth</th>
+
                                             <th>Created At</th>
                                             <th>Detail</th>
                                             <th>Delete</th>
@@ -80,7 +80,7 @@
                                             {{ $productCategory->status ? 'Confirm' : 'Cancel' }}</div>
                                           </td>
 
-                                            <td>{{$productCategory->placeofbirth}}</td>
+
 
                                           <td>{{$productCategory->created_at}}</td>
                                           <td>

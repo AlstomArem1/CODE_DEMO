@@ -205,7 +205,7 @@ export const AppProvider = ({ children }) => {
     //---------------------------------------
     //function Pagination Product
     const [page, setPage] = useState(1);
-    const [limit, setLimit] = useState(2);
+    const [limit, setLimit] = useState(8);
 
     const PaginationLast = page * limit;
     const PaginationFirst = PaginationLast - limit;

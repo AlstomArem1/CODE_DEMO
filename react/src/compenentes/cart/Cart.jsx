@@ -8,7 +8,7 @@ import { GiSelfLove } from "react-icons/gi";
 import { RiShoppingCartFill } from "react-icons/ri"
 import Pay from "../pay/Pay";
 export default function Cart() {
-    const { cart, minus, sum, InDelete, AddDelete, sweetalert,close,handle_close} = useContext(AppContext);
+    const { cart, minus, sum, InDelete, AddDelete, sweetalert ,close,handle_close} = useContext(AppContext);
     var { Locallsum } = useContext(AppContext);
     return (
         <div className="cart">
@@ -20,9 +20,9 @@ export default function Cart() {
             </div>
             <div className="cart-shop">
 
-                {cart && cart.map((item, key) => (
+                {cart && cart.map((item, indexcart) => (
                     Locallsum += item.price * item.qty,
-                    <div className="add-cart" key={key}>
+                    <div className="add-cart" key={indexcart}>
                         <div className="imgles2">
                             <img src={"http://localhost:8000/images/"+item.image} alt="" />
                         </div>
@@ -42,7 +42,7 @@ export default function Cart() {
                                 <span className="item-qty">{item.qty}</span>
                                 <button className="btn3" onClick={() => sum(item.id)}>+</button>
                             </div>
-                            <h2 className="itemquy-cart">{item.price * item.qty}<sup style={{ fontSize: "15px" }}>usd</sup></h2>
+                            <h2 className="itemquy-cart" style={{ color:"green" }}>${item.price * item.qty}</h2>
 
 
                             <div className="cart-delete">
@@ -56,8 +56,7 @@ export default function Cart() {
                 <h2 className="giatien">Total price :<span style={{ color: "#7ab317" }}>${Locallsum}</span></h2>
             </div>
             <div className="bt-end">
-
-                <button className="btn4" onClick={handle_close}>Buy</button>
+                <button className="btn4" onClick={handle_close}>Check</button>
                 <button className="btn4" onClick={AddDelete}>AddDelete</button>
             </div>
 

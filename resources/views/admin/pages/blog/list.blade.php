@@ -56,7 +56,7 @@
                                             <th style="width: 10px">Stt</th>
                                             <th>Image</th>
                                             <th>UserName</th>
-                                            <th>News</th>
+                                            <th>Link</th>
                                             <th>Introduce</th>
                                             <th>belong</th>
                                             <th>Update</th>

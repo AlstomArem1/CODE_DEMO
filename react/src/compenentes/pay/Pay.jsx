@@ -4,7 +4,7 @@ import { FaCartPlus } from "react-icons/fa";
 import { GrClose } from "react-icons/gr";
 import { AppContext } from "../../AppContext";
 export default function Pay() {
-    const { handle_close, close, cart,sweetalert } = useContext(AppContext);
+    const { handle_close, close, cart, sweetalert } = useContext(AppContext);
     var { Locallsum } = useContext(AppContext);
     return (
         <div className={`pay ${close ? 'activepay' : ''}`}>
@@ -23,32 +23,63 @@ export default function Pay() {
                     ))}
                     <h3 style={{ color: "green" }}>${Locallsum}</h3>
                 </div>
-                <div className="mau-bitcart">
-                    <div className="debit-cart">
-                        <p>Vui long chon phuong thuc thanh toan</p>
-                        <button type="submit">Credit/Debit Card</button>
-                    </div>
-                    <div className="rastaurant">
-                        <input placeholder="So the ngan hang" />
-                    </div>
-                    <div className="pay-code">
-                        <div className="hm-l1">
-                            <label>Thoi han</label>
-                            <br />
-                            <input type="text" placeholder="MM/YY" />
+                <div className="box_center_checkout">
+                    <div className="checkout_left">
+                        <div className="checkout_NameFull">
+                            <div className="Namefull_label">
+                                <label className="name-all" htmlFor="">Firt Name:</label>
+                                <input type="text" name="" id="" />
+                            </div>
+                            <div className="Namefull_label">
+                                <label className="name-all" htmlFor="">Last Name:</label>
+                                <input type="text" name="" id="" />
+                            </div>
                         </div>
-                        <div className="hm-l2">
-                            <label>CVV/CVC</label>
-                            <br />
-                            <input type="text" placeholder="3 hoac 4 chu so" />
+                        <div className="checkout_all_input">
+                            <label className="col-ed" htmlFor="">Address:</label>
+                            <input type="text" />
                         </div>
-                        <div className="hm-l3">
-                            <label>Ho Ten chu the</label>
-                            <br />
-                            <input type="text" placeholder="Ho Ten" />
+                        <div className="checkout_all_input">
+                            <label className="col-ed" htmlFor="">Country:</label>
+                            <input type="text" />
+                        </div>
+                        <div className="checkout_all_input">
+                            <label className="col-ed" htmlFor="">City:</label>
+                            <input type="text" />
+                        </div>
+                        <div className="checkout_NameFull">
+                            <div className="Namefull_label">
+                                <label className="name-all" htmlFor="">Phone:</label>
+                                <input type="text" name="" id="" />
+                            </div>
+                            <div className="Namefull_label">
+                                <label className="name-all" htmlFor="">Email:</label>
+                                <input type="text" name="" id="" />
+                            </div>
                         </div>
                     </div>
-
+                    <div className="checkout_right">
+                        <div className="checkuot_products">
+                            <div className="sol_rt2">
+                                <p >Product</p>
+                            </div>
+                            <div className="sol_rt2">
+                                <p >Total</p>
+                            </div>
+                        </div>
+                        <div>
+                            {cart && cart.map((totalitems, key) => (
+                                <div className="checkuot_products" key={key}>
+                                    <div className="sol_rt1">
+                                        <p style={{ fontSize: "15px" }}>{totalitems.name}</p>
+                                    </div>
+                                    <div className="sol_rt1">
+                                        <p style={{ fontSize: "15px" }}>${totalitems.price * totalitems.qty}</p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
                 </div>
                 <div className="cart-buynow">
                     <button onClick={sweetalert}>Pay</button>

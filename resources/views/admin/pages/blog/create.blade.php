@@ -50,7 +50,7 @@
                                         @enderror
                                     </div>
                                     <div class="form-group">
-                                        <label for="news">News</label>
+                                        <label for="news">Link</label>
                                         {{-- <div id="description"></div> --}}
                                         <textarea placeholder="Describe yourself here..." class="form-control" name="news" id="news"
                                         value="{!! old('news') !!}"

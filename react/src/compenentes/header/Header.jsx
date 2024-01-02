@@ -15,7 +15,7 @@ import { AppContext } from "../../AppContext";
 import { useNavigate } from "react-router-dom";
 import Avatarfile from "./Avatarfile";
 export default function Header() {
-    const { navbar, handle_menu1, show, cart, inputRef, handleImageClick,handleImageChange } = useContext(AppContext);
+    const { navbar, handle_menu1, show, cart, inputRef, handleImageClick,handleImageChange, handle_close } = useContext(AppContext);
     var { Locallsum } = useContext(AppContext);
 
     //===========================================
@@ -67,7 +67,7 @@ export default function Header() {
                     <div className="menu_li " onClick={() => window.scrollTo(0, 0)}>
                         <a className="menu_li_pagestext" href="#pages">Pages</a>
                         <div className="menu_li_t2">
-                            <Link className="span-li-t2">Checkout</Link>
+                            <Link to="/checkout" className="span-li-t2"><button className="span-li-t2" onClick={handle_close}>Checkout</button></Link>
                             <Link to="/cart" className="span-li-t2" onClick={() => window.scrollTo(0, 0)}>Cart</Link>
                         </div>
                     </div>
@@ -94,7 +94,6 @@ export default function Header() {
                                             <Avatarfile />
                                         </div>
                                         <div className="icon-login">
-
                                             <div style={{ display:"flex",justifyContent:"flex-start", width:"100%" , height:"100%"}} onClick={handleImageClick}>
                                                 <a href="#" className="app1">Avatar<span style={{ marginLeft:"5px", fontSize:"25px" }} ><IoMdContact /></span></a>
                                                 <input type="file" ref={inputRef} onChange={handleImageChange} style={{ fontSize:"10px", display:"none" }}/>

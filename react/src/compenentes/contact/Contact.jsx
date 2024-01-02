@@ -4,6 +4,8 @@ import { MdOutgoingMail } from "react-icons/md";
 import { BsPhoneFlip } from "react-icons/bs";
 // import mapviti from "./mapvitri.PNG";
 export default function Contact() {
+    let user = JSON.parse(localStorage.getItem('user-info'));
+    console.warn(user);
     return (
         <div className="contact">
             <div className="box-contact">
@@ -49,6 +51,7 @@ export default function Contact() {
                                 <label>Your Name:</label>
                                 <br />
                                 <input type="text" name="name1" />
+
                             </div>
                             <div className="to1-right">
                                 <label>YourEmail:</label>

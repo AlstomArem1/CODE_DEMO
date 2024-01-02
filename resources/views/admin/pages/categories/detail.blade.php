@@ -51,20 +51,7 @@
                                         <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
-                                    <div class="form-group">
-                                        <label>placeofbirth</label>
-                                        <select name="placeofbirth" class="custom-select">
-                                            <option value="">---Please Select---</option>
-                                            <option {{$productCategory->placeofbirth ? 'selected' : '' }} value="DN">DN</option>
 
-                                            <option {{$productCategory->placeofbirth ? 'selected' : '' }} value="HN">HN</option>
-
-                                            <option {{$productCategory->placeofbirth ? 'selected' : '' }} value="HCM">HCM</option>
-                                        </select>
-                                        @error('status')
-                                            <div class="alert alert-danger">{{ $message }}</div>
-                                        @enderror
-                                    </div>
                                 </div>
                                 <!-- /.card-body -->
                                 @csrf
