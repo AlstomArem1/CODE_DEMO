@@ -1,0 +1,160 @@
+.order {
+    height: 100%;
+    width: 100%;
+    display: flex;
+
+    justify-content: center;
+}
+
+.order .oder-contaim {
+    width: 80%;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+@media (max-width: 620px) {
+    .order .oder-contaim{
+        width: 100%;
+    }
+}
+.order .oder-contaim .oder-container {
+    display: flex;
+
+    width: 90%;
+
+    /* border: 1px solid green; */
+}
+
+.order .oder-contaim .oder-container .der-left {
+    width: 50%;
+    background: linear-gradient(45deg, #fff, rgb(184, 117, 117), red);
+    clip-path: polygon(0 0, 65% 0, 100% 55%, 40% 100%, 0 100%, 0% 50%);
+
+}
+
+.order .oder-contaim .oder-container .der-left .imgl-left {
+    width: 250px;
+    height: 250px;
+    position: relative;
+    top: 0;
+    left: 10%;
+    animation: boy infinite 1s;
+}
+
+@keyframes boy {
+    form {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-5px);
+    }
+}
+
+.order .oder-contaim .oder-container .der-left .imgl-left img {
+    width: 100%;
+    height: 100%;
+}
+
+.order .oder-contaim .oder-container .der-right {
+    width: 50%;
+
+}
+
+.order .oder-contaim .oder-container .der-right .js-h4 {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    /* border: 1px solid rebeccapurple; */
+    padding-right: 10px;
+    padding-top: 10px;
+
+}
+
+.order .oder-contaim .oder-container .der-right .js-h4 h4 {
+    width: 300px;
+    text-align: center;
+
+
+}
+
+.order .oder-contaim .oder-container .der-right .form-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.order .oder-contaim .oder-container .der-right .form-right input {
+    display: flex;
+    width: 90%;
+    height: 40px;
+    margin: 3px 0px;
+    padding-left: 10px;
+    border: none;
+    border-radius: 9px;
+}
+
+.order .oder-contaim .oder-container .der-right .form-right button {
+    padding: 7px 55px;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border: none;
+    background: red;
+    color: #fff;
+    border-radius: 9px;
+
+}
+
+.order .oder-contaim .oder-container .der-right .hoac-gr {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.order .oder-contaim .oder-container .der-right .form-ktras {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.order .oder-contaim .oder-container .der-right .form-ktras .ktras {
+    padding: 7px 20px;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: none;
+    background: red;
+    color: #fff;
+    border-radius: 9px;
+}
+
+.order .oder-contaim .form-fx-container {
+
+
+    width: 85%;
+    padding: 30px 50px;
+    margin: 10px 0px;
+    background: #b8abab;
+}
+
+.order .oder-contaim .form-fx-container .gui-chat {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.order .oder-contaim .form-fx-container .gui-chat .btn-chat {
+    padding: 7px 50px;
+    background: red;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 9px;
+    color: #fff;
+    margin-top:  10px;
+}

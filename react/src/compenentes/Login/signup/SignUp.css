@@ -1,0 +1,58 @@
+.Box-Register{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.Box-Register img{
+    position: relative;
+}
+.Box-Register .box-formRegister{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 500px;
+    width: 700px;
+    background: darkcyan ;
+}
+.Box-Register .box-formRegister .form-register{
+    background: #204b5e ;
+    width: 80%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Box-Register .box-formRegister .form-register input{
+    width: 80%;
+    height: 40px;
+    margin: 0px auto;
+    padding: 0px 5px;
+}
+.Box-Register .box-formRegister .form-register label{
+    margin: 0px 60px;
+    color: azure;
+    margin-top: 10px;
+}
+.Box-Register .box-formRegister .form-register span{
+    margin: 0px 60px;
+    color: red;
+    font-size: 13px;
+
+}
+.Box-Register .box-formRegister .form-register button{
+    margin: 15px auto;
+    border: none;
+    padding: 7px 50px;
+    background: goldenrod;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.Box-Register .box-formRegister .form-register button:hover{
+  background: green;
+  color: goldenrod ;
+}

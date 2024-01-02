@@ -1,0 +1,37 @@
+.ingunll {
+    width: 300%;
+
+}
+
+.ingunll .ingunll_hinhrong {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+
+}
+
+.ingunll .ingunll_hinhrong .null_tiveimg {
+    margin-right: 8px;
+    width: 700px;
+    height: 450px;
+    transition: 0.5s;
+    padding: 10px 15px;
+    position: relative;
+
+}
+
+
+.ingunll .ingunll_hinhrong .null_tiveimg img {
+    width: 100%;
+    height: 100%;
+
+}
+
+@media (max-width: 1120px) {
+    .ingunll .ingunll_hinhrong .null_tiveimg {
+        width: 1120px;
+
+    }
+}

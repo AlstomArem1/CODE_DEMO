@@ -1,0 +1,43 @@
+.container{
+    max-width: 1240px;
+    padding: 40px 10px;
+    margin: 0 auto;
+}
+.container .heading{
+    padding: 10px 0;
+    font-size: 35px;
+    text-align: center;
+   
+}
+
+.swiper_container {
+    height: 520px;
+    padding: 20px 0;
+    position: relative;
+   
+}
+.swiper-slide{ 
+    width: 370px;
+    height: 420px;
+    position: relative;
+   
+    
+}
+/*  */
+.swiper-blog {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.swiper-blog p{
+    width: 50%;
+    font-size: 20px;
+    margin-top: 20px;
+}
+.swiper-slide img{
+   width: 200px;
+   height: 200px;
+   margin-top: 20px;
+   border-radius: 60%;
+   object-fit: cover;
+}
