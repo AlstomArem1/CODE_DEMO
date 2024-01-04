@@ -500,7 +500,7 @@ body {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    z-index: 1030;
+    z-index: 1020;
     display: none;
 }
 
@@ -511,7 +511,8 @@ body {
 }
 
 .headmenu.activeitem2 {
-    z-index: -1;
+    z-index: 1;
+    position: relative;
 
 }
 
@@ -521,6 +522,7 @@ body {
     background: var(--dark5);
     transform: translateY(0);
     transition: 0.5s;
+
 
 }
 
@@ -575,7 +577,7 @@ body {
     color: var(--dark1);
 }
 
-.headmenu .headmenu_menu2 .headmenu2_menu2 {
+.headmenu .headmenu_menu2 .headmenu2_menu2{
     padding: 10px 0px;
 }
 

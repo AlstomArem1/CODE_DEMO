@@ -145,7 +145,6 @@ export default function Header() {
                     className="headmenu_menu1"
                     onClick={handle_menu1}
                 >
-                    <h1>Header1</h1>
                 </div>
                 <div className="headmenu_menu2">
                     <div className="button_menuRi">

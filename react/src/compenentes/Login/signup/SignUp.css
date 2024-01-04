@@ -1,58 +1,89 @@
-.Box-Register{
+.Box-Register {
     display: flex;
     justify-content: center;
     align-items: center;
 
 }
-.Box-Register img{
+
+.Box-Register img {
     position: relative;
 }
-.Box-Register .box-formRegister{
+
+.Box-Register .box-formRegister {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     position: absolute;
-    height: 500px;
-    width: 700px;
-    background: darkcyan ;
+    height: 580px;
+    width: 500px;
+    background: rgb(99, 202, 202);
+    border-radius: 20px;
+
+
 }
-.Box-Register .box-formRegister .form-register{
-    background: #204b5e ;
-    width: 80%;
-    height: 90%;
+
+.Box-Register .box-formRegister h4 {
+    font-size: 27px;
+    font-weight: 600;
+    color: #fff;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.Box-Register .box-formRegister .form-register {
+    background: #fff;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
+    padding: 10px 10px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
 }
 
-.Box-Register .box-formRegister .form-register input{
+.Box-Register .box-formRegister .form-register input {
     width: 80%;
-    height: 40px;
+    height: 50px;
     margin: 0px auto;
-    padding: 0px 5px;
+    padding: 0px 10px;
+    border-radius: 50px;
 }
-.Box-Register .box-formRegister .form-register label{
-    margin: 0px 60px;
-    color: azure;
-    margin-top: 10px;
-}
-.Box-Register .box-formRegister .form-register span{
-    margin: 0px 60px;
-    color: red;
-    font-size: 13px;
 
+.Box-Register .box-formRegister .form-register label {
+    margin: 0px 60px;
+    color: black;
+    margin-top: 10px;
+    font-weight: 600;
 }
-.Box-Register .box-formRegister .form-register button{
-    margin: 15px auto;
+
+.Box-Register .box-formRegister .form-register button {
     border: none;
-    padding: 7px 50px;
-    background: goldenrod;
+    background: rgb(99, 202, 202);
     font-weight: 700;
     transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 50px;
+    height: 11%;
+    border-radius: 50px;
+    transition: 0.5s;
+    color: #fff;
 }
 
-.Box-Register .box-formRegister .form-register button:hover{
-  background: green;
-  color: goldenrod ;
+.Box-Register .box-formRegister .form-register button:hover {
+    background: rgb(23, 168, 47);
+    color: aqua;
+}
+
+.Box-Register .box-formRegister span {
+    color: red;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
