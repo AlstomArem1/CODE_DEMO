@@ -107,15 +107,15 @@
                                                 </option>
                                             @endforeach
                                         </select>
-                                        @error('product_category_id ')
+                                        @error('product_category_id')
                                             <div class="alert alert-danger">{{ $message }}</div>
-                                        @enderror
+                                         @enderror
                                     </div>
                                     <div class="form-group">
                                         <label for="image">image</label>
                                         <input name="image" type="file" value="{{ old('image') }}"
                                             class="form-control" id="image" placeholder="123">
-                                        @error('image')
+                                            @error('image')
                                             <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
                                     </div>

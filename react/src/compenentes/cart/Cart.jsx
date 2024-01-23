@@ -8,8 +8,12 @@ import { GiSelfLove } from "react-icons/gi";
 import { RiShoppingCartFill } from "react-icons/ri"
 import Pay from "../pay/Pay";
 export default function Cart() {
-    const { cart, minus, sum, InDelete, AddDelete, sweetalert ,close,handle_close} = useContext(AppContext);
+    const { cart, minus, sum, InDelete, AddDelete, sweetalert ,close,handle_close   } = useContext(AppContext);
     var { Locallsum } = useContext(AppContext);
+
+
+
+
     return (
         <div className="cart">
             <div className={`Cart-Pay ${close ? "activecartpay" : ""}`}>
@@ -56,8 +60,8 @@ export default function Cart() {
                 <h2 className="giatien">Total price :<span style={{ color: "#7ab317" }}>${Locallsum}</span></h2>
             </div>
             <div className="bt-end">
-                <button className="btn4" onClick={handle_close}>Check</button>
-                <button className="btn4" onClick={AddDelete}>AddDelete</button>
+                <button className="btn4" onClick={sweetalert}>Checkout</button>
+                <button className="btn4" onClick={AddDelete}>Alldelete</button>
             </div>
 
         </div>

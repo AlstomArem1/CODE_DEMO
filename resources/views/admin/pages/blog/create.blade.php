@@ -93,7 +93,7 @@
                                 </div>
                                 <!-- /.card-body -->
                                 <div class="card-footer">
-                                    <button onclick="return confirm('Are you sure')" type="submit" class="btn btn-primary">Create</button>
+                                    <button  type="submit" class="btn btn-primary">Create</button>
                                 </div>
                                 @csrf
                             </form>

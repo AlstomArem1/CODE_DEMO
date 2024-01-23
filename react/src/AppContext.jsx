@@ -4,6 +4,8 @@ import moment from "moment";
 import axios from "axios";
 import swal from 'sweetalert';
 import Aos from "aos";
+import { useNavigate } from "react-router-dom";
+
 // import state from "sweetalert/typings/modules/state";
 export const AppContext = createContext({});
 export const AppProvider = ({ children }) => {
@@ -18,6 +20,7 @@ export const AppProvider = ({ children }) => {
     const [navbar, setNavbar] = useState(false);
     const [toptop, setToptop] = useState(true);
     const [close, setClose] = useState(false);
+    const navigate = useNavigate();
 
     const handle_toptop = () => {
         setToptop(!toptop);
@@ -205,7 +208,7 @@ export const AppProvider = ({ children }) => {
     //---------------------------------------
     //function Pagination Product
     const [page, setPage] = useState(1);
-    const [limit, setLimit] = useState(8);
+    const [limit, setLimit] = useState(4);
 
     const PaginationLast = page * limit;
     const PaginationFirst = PaginationLast - limit;
@@ -263,6 +266,7 @@ export const AppProvider = ({ children }) => {
     }
 
 
+
     const today = moment().format('MMMM, DD/MM/YYYY');
     const hour = moment().format('hh');
     const minet = moment().format('mm');
@@ -287,20 +291,110 @@ export const AppProvider = ({ children }) => {
         }
         swal({
             title: "Complete!",
-            text: "Bạn muốn thêm giỏ hàng không?",
+            text: "Do you want to add a shopping cart??",
             icon: "success",
             button: "Yes",
         });
+
     }
-    const sweetalert = () => {
+    //-------------------------------------
+
+
+    //-------------------------------------
+    // const [username, setUsername] = useState();
+    // const [email, setEmail] = useState();
+    // const [phone, setPhone] = useState();
+    // const [address, setAddress] = useState();
+    // const [country, setCountry] = useState();
+    // const [city, setCity] = useState();
+    // const [note, setNote] = useState();
+    const [errors1, setErrors1] = useState([]);
+
+    const [checkoutInput, setCheckoutInput] = useState({
+        username: '',
+        email: '',
+        phone: '',
+        address: '',
+        country: '',
+        city: '',
+        note: '',
+    });
+
+    const handle_inputs = (e) => {
+        e.persist();
+        setCheckoutInput({ ...checkoutInput, [e.target.name]: e.target.value });
+    }
+
+
+
+    const handle_paymaent = (e) => {
+        e.preventDefault();
+
+        // try {
+        //     await axios.post("http://localhost:8000/api/placeorder", { username, email, phone, address, country, city, note });
+        //     setUsername("");
+        //     setEmail("");
+        //     setPhone("");
+        //     setAddress("");
+        //     setCountry("");
+        //     setCity("");
+        //     setNote("");
+
+        //     navigate("/home")
+        //     swal("Order Placed Successfully", res.data.message, "success");
+        //     const kq = cart && cart.filter((item) => !item.id);
+        //     setCart(kq);
+        //     setErrors1("");
+
+        //     // result = await result.json()
+        //     // localStorage.setItem('user-info', JSON.stringify(result))
+
+        // } catch (e) {
+        //     if (e.response.status === 422) {
+        //         setErrors1(e.response.data.errors);
+        //         swal({
+        //             title: "No",
+        //             text: "Bạn chưa thêm bất cứ điều gì!",
+        //             icon: "warning",
+        //             button: "Next",
+        //         });
+
+        //     }
+        // }
+        const usets = localStorage.getItem('auth_name');
+        const data = {
+            username: usets,
+            email: checkoutInput.email,
+            phone: checkoutInput.phone,
+            address: checkoutInput.address,
+            country: checkoutInput.country,
+            city: checkoutInput.city,
+            note: checkoutInput.note,
+        }
+
+        axios.post(`http://localhost:8000/api/placeorder`, data).then(res => {
+            if (res.data.status === 200) {
+                swal("Order Placed Successfully", res.data.message, "success");
+                setErrors1("");
+                navigate("/home")
+                const kq = cart && cart.filter((item) => !item.id);
+                setCart(kq);
+
+            } else if (res.data.status === 422) {
+                swal("All fields are mandatory", "", "error");
+                setErrors1(res.data.errors);
+            }
+        })
+
+    }
+
+
+    const sweetalert = (e) => {
+        e.preventDefault();
         const kq = cart && cart.filter((item) => item.id);
         if (kq != 0) {
-            swal({
-                title: "Giao dịch mua thành công!",
-                text: "You clicked the button!",
-                icon: "success",
-                button: "Next",
-            });
+            setClose(!close);
+
         }
         else if (kq == 0) {
             swal({
@@ -442,7 +536,13 @@ export const AppProvider = ({ children }) => {
                 nextPageProduct,
                 page,
                 handleImageChange,
-                image
+                image,
+
+                checkoutInput,
+                handle_inputs,
+                handle_paymaent,
+                errors1,
+                setLimit,
             }}
         >
             {children}

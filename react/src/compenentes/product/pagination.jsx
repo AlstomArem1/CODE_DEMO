@@ -8,13 +8,13 @@ function Pagination() {
         <div className="pagination_products">
             <ul className="pagination pagaination-md justify-content-center">
                 {/* <li className="page-item"><span className="page-link">&laquo;</span></li> */}
-                <li className="page-item" ><span className="page-link" onClick={prevPageProduct}>&lsaquo;</span></li>
+                <li className="page-item" ><a href="#newspt" className="page-link" onClick={prevPageProduct}>&lsaquo;</a></li>
                 {pageTatalphae && pageTatalphae.map(value => (
-                    <li key={value} className="page-item"><span className={`page-link ${page === value ? "activepageproduct":""}`}
+                    <li key={value} className="page-item"><a href="#newspt" className={`page-link ${page === value ? "activepageproduct":""}`}
                     onClick={() => setPage(value)}
-                    >{`${value}`}</span></li>
+                    >{`${value}`}</a></li>
                 ))}
-                <li className="page-item" ><span className="page-link" onClick={nextPageProduct}>&rsaquo;</span></li>
+                <li className="page-item" ><a href="#newspt" className="page-link" onClick={nextPageProduct}>&rsaquo;</a></li>
                 {/* <li className="page-item"><span className="page-link">&raquo;</span></li> */}
             </ul>
         </div>

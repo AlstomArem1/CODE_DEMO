@@ -9,8 +9,10 @@
         "guzzlehttp/guzzle": "^7.2",
         "inertiajs/inertia-laravel": "^0.6.3",
         "laravel/framework": "^10.10",
-        "laravel/sanctum": "^3.2",
+        "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
+        "laravel/ui": "^4.4",
+        "mallardduck/blade-boxicons": "^2.4",
         "tightenco/ziggy": "^1.0"
     },
     "require-dev": {

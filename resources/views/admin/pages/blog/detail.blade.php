@@ -70,6 +70,19 @@
                                         @enderror
                                     </div>
                                     <div class="form-group">
+                                        <label>Blog Category</label>
+                                        <select name="blog_category_id" class="custom-select">
+                                            <option value="">---Please Select---</option>
+                                            @foreach ($blogCategories as $blogCategory)
+                                                <option value="{{ $blogCategory->id }}">{{ $blogCategory->name }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                        @error('blog_category_id ')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group">
                                         <label for="image">image</label>
                                         <input name="image" type="file" value="{{ $blog->image  }}"
                                             class="form-control" id="image" placeholder="123">

@@ -188,7 +188,7 @@ body {
 
 .home .home_Rong .web1 .web1_start .start_col1 .btn_jst .btn-1d .sb {
     padding: 12px 35px;
-    z-index: 2;
+    z-index: 1;
     display: flex;
     justify-content: center;
     align-items: center;

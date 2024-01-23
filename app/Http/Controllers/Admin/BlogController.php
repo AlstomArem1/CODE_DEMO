@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\AdminBlogRequets;
 use App\Models\BlogModel;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -13,7 +14,7 @@ class BlogController extends Controller
 {
     //
     public function index(){
-        $blogs =  BlogModel::Orderby('updated_at', 'desc')->get();
+        $blogs =  BlogModel::Orderby('updated_at', 'desc')->paginate(5);
         return view('admin.pages.blog.list',['blogs'=>$blogs]);
     }
 
@@ -21,7 +22,7 @@ class BlogController extends Controller
         $blogCategories = DB::select('select * from categories where status = 1');
         return view('admin.pages.blog.create',['blogCategories'=>$blogCategories]);
     }
-    public function storeblog(Request $request){
+    public function storeblog(AdminBlogRequets $request){
         if($request->hasFile('image')){
             $fileOriginalName = $request->file('image')->getClientOriginalName();
             $fileName = pathinfo($fileOriginalName, PATHINFO_FILENAME);
@@ -36,7 +37,7 @@ class BlogController extends Controller
             "news" => $request->news,
             "introduce" => $request->introduce,
             "blog_category_id" => $request->blog_category_id,
-            "image" => $fileName ,
+            "image" => $fileName ?? null ,
             "created_at" => Carbon::now(),
             "updated_at" => Carbon::now()
 
@@ -47,7 +48,7 @@ class BlogController extends Controller
         return redirect()->route('admin.blog.index')->with('message',$message);
 
     }
-    public function SlugBlog(Request $request){
+    public function SlugBlog(AdminBlogRequets $request){
         return response()->json(['slug' => Str::slug($request->name,'-')]);
     }
 
@@ -55,8 +56,8 @@ class BlogController extends Controller
     {
         //
         $blog = DB::table('blogs')->find($id);
-
-        return view('admin.pages.blog.detail',['blog' => $blog]);
+        $blogCategories = DB::table('categories')->where('status','=',1)->get();
+        return view('admin.pages.blog.detail',['blog' => $blog ,'blogCategories' => $blogCategories]);
 
 
     }
@@ -77,7 +78,7 @@ class BlogController extends Controller
 
     }
 
-    public function updateblog(Request $request, string $id)
+    public function updateblog(AdminBlogRequets $request, string $id)
     {
         //
         $blog = DB::table('blogs')->find($id);
@@ -100,7 +101,7 @@ class BlogController extends Controller
             "news" => $request->news,
             "introduce" => $request->introduce,
             "image" => $fileName ?? $oldImageFileName,
-            "blog_category_id " => $request->blog_category_id,
+            "blog_category_id" => $request->blog_category_id,
             "updated_at" => Carbon::now()
 
         ]);

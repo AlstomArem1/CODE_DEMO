@@ -113,7 +113,7 @@ export default function Home() {
                                     <div className="row-w2" key={key}>
                                         <img src={"http://localhost:8000/images/"+itemlaptop.image} alt="" />
                                         <div className="small-center">
-                                            <small>He</small>
+                                            <small>View</small>
                                             <p>{itemlaptop.name}</p>
                                             <button>Read</button>
                                         </div>

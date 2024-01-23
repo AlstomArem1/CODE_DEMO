@@ -3,28 +3,101 @@ import logo from "./kinh1logo.png";
 import "./Header.css";
 import { BiSearchAlt } from "react-icons/bi";
 import { IoMdContact } from "react-icons/io";
-import { FaCartArrowDown, FaMapMarkedAlt   } from "react-icons/fa";
+import { FaCartArrowDown, FaMapMarkedAlt } from "react-icons/fa";
 import { FaTruckFast, FaMoneyCheckDollar } from "react-icons/fa6";
-import { MdOutgoingMail, MdProductionQuantityLimits  } from "react-icons/md";
+import { MdOutgoingMail, MdProductionQuantityLimits } from "react-icons/md";
 import { BsTelephonePlusFill } from "react-icons/bs";
 import { GiStarFormation } from "react-icons/gi";
 import { RiMenu4Fill, RiLogoutBoxRLine } from "react-icons/ri";
 import { AiOutlineCloseCircle } from "react-icons/ai";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AppContext } from "../../AppContext";
 import { useNavigate } from "react-router-dom";
 import Avatarfile from "./Avatarfile";
+import { FaRightFromBracket } from "react-icons/fa6";
+import swal from "sweetalert";
+import axios from "axios";
 export default function Header() {
-    const { navbar, handle_menu1, show, cart, inputRef, handleImageClick,handleImageChange, handle_close } = useContext(AppContext);
+    const { navbar, handle_menu1, show, cart, inputRef, handleImageClick, handleImageChange, handle_close } = useContext(AppContext);
     var { Locallsum } = useContext(AppContext);
 
     //===========================================
-    let user = JSON.parse(localStorage.getItem('user-info'));
-
+    let use = localStorage.getItem('auth_name');
+    // console.log(use);
     const navigate = useNavigate();
-    const Logout = () => {
-        localStorage.clear();
-        navigate("/signup")
+
+    const SumbitLogout = (e) => {
+        e.preventDefault();
+        axios.post(`/api/logout`).then(res => {
+            if (res.data.status === 200) {
+                localStorage.removeItem('auth_token');
+                localStorage.removeItem('auth_name');
+                swal("Sucess", res.data.message, "success");
+                navigate("/login")
+
+            }
+        });
+    }
+    // let use = JSON.parse(localStorage.getItem('auth_name'));
+    // console.log(use);
+    // useEffect(
+    //     () => {
+    //         if (localStorage.getItem('auth_token')) {
+    //             navigate("/login")
+    //         }
+    //     }, []
+    // )
+
+
+    var AuthButtons = ''
+    if (!localStorage.getItem('auth_token')) {
+        AuthButtons = (
+                <Link to="/login" className="applo" onClick={() => window.scrollTo(0, 0)}>Login</Link>
+
+        )
+    }
+    else {
+        AuthButtons = (
+            <div className="head_shop">
+                <div className="Name_fulluser">
+                    <small>{use}</small>
+                </div>
+                <div className="shop-iconlist1">
+                    <div to="/" className="listicon" >
+                        <Avatarfile />
+                    </div>
+                    <div className="icon-login">
+                        <div style={{ display: "flex", justifyContent: "flex-start", width: "100%", height: "100%" }} onClick={handleImageClick}>
+                            <a href="#" className="app1">Avatar<span style={{ marginLeft: "5px", fontSize: "25px" }} ><IoMdContact /></span></a>
+                            <input type="file" ref={inputRef} onChange={handleImageChange} style={{ fontSize: "10px", display: "none" }} />
+                        </div>
+                        <a href="#" className="app2" onClick={SumbitLogout}>Logout<span><RiLogoutBoxRLine /></span></a>
+                    </div>
+                </div>
+
+                <div className="shop-iconlist2">
+                    <Link className="listicon" to="/cart" onClick={() => window.scrollTo(0, 0)}>
+                        <FaCartArrowDown />
+                        <h5 className="px-h5">{cart.length}</h5>
+                    </Link>
+                    <div className="cart-selling">
+                        <h2 style={{ borderBottom: "1px solid black" }}>
+                            {cart && cart.map((itemt) => (
+                                Locallsum += itemt.price * itemt.qty,
+                                <div></div>
+                            ))}
+
+                            <FaMoneyCheckDollar />: <span style={{
+                                color: "green", marginLeft: "5px"
+                            }}>${Locallsum}</span>
+                        </h2>
+                        <h2>
+                            <MdProductionQuantityLimits />: <span style={{ fontSize: "15px", color: "red", marginLeft: "5px", fontWeight: "600" }}> {cart.length}</span>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        )
     }
 
     return (
@@ -82,54 +155,7 @@ export default function Header() {
                 </div>
 
                 <div className="heading_form">
-                    {
-                        localStorage.getItem('user-info') ?
-                            <>
-                                <div className="head_shop">
-                                    <div className="Name_fulluser">
-                                        <span>{user.data.name}</span>
-                                    </div>
-                                    <div className="shop-iconlist1">
-                                        <div to="/" className="listicon" >
-                                            <Avatarfile />
-                                        </div>
-                                        <div className="icon-login">
-                                            <div style={{ display:"flex",justifyContent:"flex-start", width:"100%" , height:"100%"}} onClick={handleImageClick}>
-                                                <a href="#" className="app1">Avatar<span style={{ marginLeft:"5px", fontSize:"25px" }} ><IoMdContact /></span></a>
-                                                <input type="file" ref={inputRef} onChange={handleImageChange} style={{ fontSize:"10px", display:"none" }}/>
-                                            </div>
-                                            <a href="#" className="app2" onClick={Logout}>Loguot<span><RiLogoutBoxRLine /></span></a>
-                                        </div>
-                                    </div>
-
-                                    <div className="shop-iconlist2">
-                                        <Link className="listicon" to="/cart" onClick={() => window.scrollTo(0, 0)}>
-                                            <FaCartArrowDown />
-                                            <h5 className="px-h5">{cart.length}</h5>
-                                        </Link>
-                                        <div className="cart-selling">
-                                            <h2 style={{    borderBottom:"1px solid black" }}>
-                                                {cart && cart.map((itemt) => (
-                                                    Locallsum += itemt.price * itemt.qty,
-                                                    <div></div>
-                                                ))}
-
-                                                <FaMoneyCheckDollar/>: <span style={{
-                                                    color: "green", marginLeft:"5px"
-                                                }}>${Locallsum}</span>
-                                            </h2>
-                                            <h2>
-                                                <MdProductionQuantityLimits />: <span style={{ fontSize: "15px", color: "red", marginLeft:"5px", fontWeight:"600" }}> {cart.length}</span>
-                                            </h2>
-                                        </div>
-                                    </div>
-                                </div>
-                            </>
-                            :
-                            <>
-                                <Link to="/signin" className="applo" onClick={() => window.scrollTo(0, 0)}>Login</Link>
-                            </>
-                    }
+                    {AuthButtons}
                 </div>
                 <div className="menu_btn_left">
                     <button
@@ -152,12 +178,11 @@ export default function Header() {
                             className="headmenu1_btnRi"
                             onClick={handle_menu1}
                         >
-                            <span><AiOutlineCloseCircle /></span>
+                            <span><FaRightFromBracket /></span>
                         </button>
                     </div>
                     <div className="headmenu2_menu2">
                         <Link to="/home" className="menu_li2" onClick={() => window.scrollTo(0, 0)}>Home</Link>
-                        <Link to="" className="menu_li2" onClick={() => window.scrollTo(0, 0)}>Pages</Link>
                         <Link to="/blog" className="menu_li2" onClick={() => window.scrollTo(0, 0)}>Blog</Link>
                         <Link to="/shop" className="menu_li2" onClick={() => window.scrollTo(0, 0)}>Shop</Link>
                         <Link to="/contact" className="menu_li2" onClick={() => window.scrollTo(0, 0)}>Contact</Link>

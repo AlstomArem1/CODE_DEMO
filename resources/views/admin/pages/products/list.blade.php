@@ -115,7 +115,7 @@
                             <!-- /.card-body -->
                             <div class="card-footer clearfix">
                                 {{-- 'admin.pagination.my-pagination' --}}
-                                {{ $products->links() }}
+                                {{ $products->links('pagination::bootstrap-5') }}
                             </div>
                         </div>
                         <!-- /.card -->
@@ -126,11 +126,11 @@
         <!-- /.content -->
     </div>
 @endsection
-@section('js-custom')
+{{-- @section('js-custom')
     <script  type="text/javascript">
-        //let table = new DataTable('#table-product');
-        // $('#table-product').dataTable( {
-        // "pageLength": 1
-        // } );
+        let table = new DataTable('#table-product');
+        $('#table-product').dataTable( {
+        "pageLength": 1
+        } );
     </script>
-@endsection
+@endsection --}}

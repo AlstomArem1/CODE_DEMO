@@ -103,7 +103,7 @@
                             <!-- /.card-body -->
                             <div class="card-footer clearfix">
                                 {{-- 'admin.pagination.my-pagination' --}}
-
+                                {{ $blogs->links('pagination::bootstrap-5') }}
                             </div>
                         </div>
                         <!-- /.card -->

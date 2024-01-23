@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\productRequests;
 use App\Models\CategoryModel;
 use App\Models\ProductModel;
 use Carbon\Carbon;
@@ -53,7 +54,7 @@ class ProductController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(productRequests $request)
     {
         //
         if($request->hasFile('image')){
@@ -107,7 +108,7 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(productRequests $request, string $id)
     {
         //
         $product = DB::table('products')->find($id);
@@ -163,7 +164,7 @@ class ProductController extends Controller
 
     }
 
-    public function Uploadimage(Request $request){
+    public function Uploadimage(productRequests $request){
         if($request->hasFile('upload')){
             $fileOriginalName = $request->file('image')->getClientOriginalName();
             $fileName = pathinfo($fileOriginalName, PATHINFO_FILENAME);
@@ -177,7 +178,7 @@ class ProductController extends Controller
         }
     }
 
-    public function Slug(Request $request){
+    public function Slug(productRequests $request){
         return response()->json(['slug' => Str::slug($request->name,'-')]);
     }
 

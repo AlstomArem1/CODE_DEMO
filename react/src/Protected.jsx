@@ -4,9 +4,9 @@ function Protected(props) {
     let Cmp=props.Cmp
     const navigate = useNavigate();
     useEffect(() => {
-        if(!localStorage.getItem('user-info'))
+        if(!localStorage.getItem('auth_token'))
         {
-            navigate("/signin")
+            navigate("/login")
         }
     },[])
     return (

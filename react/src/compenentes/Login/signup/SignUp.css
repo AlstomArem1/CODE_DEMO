@@ -81,7 +81,7 @@
     color: aqua;
 }
 
-.Box-Register .box-formRegister span {
+.Box-Register .box-formRegister small{
     color: red;
     width: 100%;
     display: flex;

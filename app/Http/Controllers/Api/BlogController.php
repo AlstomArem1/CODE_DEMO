@@ -22,7 +22,7 @@ class BlogController extends Controller
     }
 
     public function bloglaptoplist(){
-        return BlogModel::where('blog_category_id','3')->orderBy('created_at','desc')->limit(6)->get();
+        return BlogModel::where('blog_category_id','2')->orderBy('created_at','desc')->limit(6)->get();
     }
 
     public function bloglaptoplist2(){

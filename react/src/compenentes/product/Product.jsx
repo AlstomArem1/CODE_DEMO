@@ -19,7 +19,7 @@ import Pagination from "./pagination";
 export default function Product() {
     const { product, addCart, fillterlist4, setCount, handle_Apple, apple, giaodich, handle_toptop, toptop,
         productValue, handle_Search, setProductValue, handle_Reset, setSetlectvalue, selectvalue, stringfiler,
-        sortProductsByPrice, uservitegination,
+        sortProductsByPrice, uservitegination, setLimit
     } = useContext(AppContext);
     var { Locallsum } = 0;
 
@@ -132,9 +132,9 @@ export default function Product() {
                         <ControlledCarousel />
                     </div>
                 </div>
-                <div className="lag-newshop-chitiet2">
+                <div className="lag-newshop-chitiet2" id="newspt">
                     <div className="chitiet2_start">
-                        <h1>New Products</h1>
+                        <h5 >New products</h5>
                     </div>
                     <div className="chitiet2_end">
                         <button className={apple === 1 ? 'apple1 activeleft' : 'apple1'} onClick={() => handle_Apple(1)}><AiFillApple /></button>
@@ -143,12 +143,14 @@ export default function Product() {
                 </div>
                 <div className="box-newshop">
                     <div className="shop-link-list">
+
                         <div className="linttop">
-                            <h4 style={{ color: "#fff" }}>Search</h4>
+                            <h5 style={{ color: "#fff" }}>Search</h5>
                             <button className="linttop-btntop"
                                 onClick={handle_toptop}
                             >
                                 <TbMenuOrder />
+
                             </button>
                         </div>
 
@@ -171,15 +173,15 @@ export default function Product() {
                                     value={selectvalue}
                                     onChange={e => setSetlectvalue(e.target.value)}
                                 >
-                                    <option>--SelectFiler--</option>
+                                    <option>-- Filter by birthplace --</option>
                                     <option>hcm</option>
                                     <option>dn</option>
                                     <option>hn</option>
                                 </select>
+
                                 <button className="searchiot-fliet" onClick={stringfiler}><FaCheck /></button>
                             </div>
                             <div className="productSort_header">
-                                <h5>Filter By Price</h5>
                                 <div className="product-cards_price-filter">
                                     <span>Price : &nbsp;</span>
                                     <select className="form-select-sortby" name="" id=""
@@ -189,8 +191,16 @@ export default function Product() {
                                         <option value="HighToLow">High To Low</option>
                                     </select>
                                 </div>
-
+                                <div className="filerLimit" style={{ margin:"5px 0px" }}>
+                                    <span>filter : &nbsp;</span>
+                                    <select name="" id="" onChange={(e) => setLimit(e.target.value)}>
+                                        <option value="4">4</option>
+                                        <option value="8">8</option>
+                                        <option value="12">12</option>
+                                    </select>
+                                </div>
                             </div>
+
                         </div>
                     </div>
                     <div className="shop-product " >
@@ -237,7 +247,7 @@ export default function Product() {
                             ))}
                         </div>
                         <div className={apple === 2 ? 'product-kinght showleft activeleft' : 'product-kinght showleft'}>
-                            {product && product.map((itemp, index) => (
+                            {uservitegination && uservitegination.map((itemp, index) => (
 
                                 <div className="product-rol2" key={index}>
                                     <div className="product-imgles2">

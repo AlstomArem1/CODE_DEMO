@@ -23,7 +23,8 @@ body {
     flex-direction: column;
     align-items: center;
     position: relative;
-    z-index: 999;
+    z-index: 2;
+
 
 }
 
@@ -36,6 +37,7 @@ body {
     width: 100%;
     transition: 0.5s;
     border-top: 1px solid var(--dark);
+
 
 }
 
@@ -59,7 +61,7 @@ body {
 
 .header .heading.activeitem1 {
     position: fixed;
-    z-index: 999;
+    z-index: -1;
 
 
 }
@@ -157,7 +159,7 @@ body {
     align-items: center;
     /* border: 1px solid gold;   */
     height: 100%;
-    width: 30%;
+    width: 40%;
     transition: 1s;
 }
 
@@ -491,105 +493,6 @@ body {
     font-size: 30px;
     color: var(--dark4);
 }
-
-.headmenu {
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: 1020;
-    display: none;
-}
-
-@media (max-width: 1060px) {
-    .headmenu{
-        display: flex;
-    }
-}
-
-.headmenu.activeitem2 {
-    z-index: 1;
-    position: relative;
-
-}
-
-.headmenu .headmenu_menu1 {
-    width: 60%;
-    height: 100%;
-    background: var(--dark5);
-    transform: translateY(0);
-    transition: 0.5s;
-
-
-}
-
-.headmenu.activeitem2 .headmenu_menu1 {
-    transform: translateY(-100%);
-
-}
-
-.headmenu .headmenu_menu2 {
-    width: 40%;
-    height: 100%;
-    padding: 20px 0px;
-    background: var(--dark3);
-    transform: translateX(0);
-    overflow: scroll;
-    transition: 0.5s;
-
-}
-
-
-
-
-
-
-
-.headmenu.activeitem2 .headmenu_menu2 {
-    transform: translateX(100%);
-
-}
-
-.headmenu .headmenu_menu2 .button_menuRi {
-    display: flex;
-    justify-content: center;
-    /* border: 1px solid red; */
-}
-
-.headmenu .headmenu_menu2 .button_menuRi .headmenu1_btnRi {
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background: none;
-    border: none;
-
-
-}
-
-.headmenu .headmenu_menu2 .button_menuRi .headmenu1_btnRi span {
-    font-size: 30px;
-    color: var(--dark1);
-}
-
-.headmenu .headmenu_menu2 .headmenu2_menu2{
-    padding: 10px 0px;
-}
-
-.headmenu .headmenu_menu2 .headmenu2_menu2 .menu_li2 {
-    padding-bottom: 10px;
-    display: flex;
-    justify-content: center;
-    text-decoration: none;
-    font-size: 35px;
-    color: var(--dark1);
-}
-
 .applo{
     text-decoration: none;
     margin: 0px 20px;
@@ -616,6 +519,108 @@ body {
     padding-right: 10px;
 
 }
-.header .heading .heading_form .head_shop .Name_fulluser span {
+.header .heading .heading_form .head_shop .Name_fulluser small{
     border-bottom: 1px solid rgb(49, 214, 104);
+    font-size: 15px;
 }
+
+.header .headmenu{
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: fixed;
+
+}
+@media (max-width: 1060px) {
+    .header .headmenu{
+        display: flex;
+    }
+    .header .heading .heading_form .head_shop .Name_fulluser small{
+        font-size: 10px;
+    }
+}
+
+
+.header .headmenu.activeitem2{
+    position: relative;
+
+}
+
+.header .headmenu .headmenu_menu1{
+    position: fixed;
+    left: 0;
+    height: 100%;
+    width: 75%;
+    background: rgba(0, 0, 0, 0.63);
+    transform: translateY(0);
+    transition: 1s;
+    z-index: 2;
+}
+
+.header .headmenu.activeitem2 .headmenu_menu1{
+    position: fixed;
+    transform: translateY(-200%);
+    z-index: -1;
+
+}
+
+
+.header .headmenu .headmenu_menu2{
+    position: fixed;
+    right: 0;
+    width: 25%;
+    height: 100%;
+    background: #326a81;
+    transform: translateX(0%);
+    transition: 1s;
+    z-index: 2;
+
+}
+
+.header .headmenu.activeitem2 .headmenu_menu2{
+    position: fixed;
+    transform: translateX(200%);
+    z-index: -1;
+
+}
+.header .headmenu .headmenu_menu2 .button_menuRi{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+
+}
+.header .headmenu .headmenu_menu2 .button_menuRi button{
+    padding: 5px 20px;
+    border: none;
+    background: none;
+    margin: 5px 5px;
+    font-size: 35px;
+    color: red;
+}
+.header .headmenu .headmenu_menu2 .headmenu2_menu2{
+    width: 100%;
+    height: 100%;
+
+
+}
+.header .headmenu .headmenu_menu2 .headmenu2_menu2 .menu_li2{
+    display: flex;
+    font-size: 27px;
+    margin: 3px 5px;
+    /* border: 1px solid rebeccapurple; */
+    padding: 5px 20px;
+    text-decoration: none;
+    color: #fff;
+    background:#204b5e;
+    border-radius: 50px;
+    transition: 0.5s;
+}
+.header .headmenu .headmenu_menu2 .headmenu2_menu2 .menu_li2:hover{
+    background: #215a70;
+    color: #410096;
+}
+
+/* .header .headmenu.activeitem2{
+    display: none;
+} */
+

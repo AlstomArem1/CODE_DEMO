@@ -16,7 +16,7 @@
     flex-direction: column;
     justify-content: center;
     width: 50%;
-    height: 55%;
+    height: 65%;
     border-radius: 12px;
     background: aliceblue;
     text-align: center;
@@ -57,7 +57,7 @@
 .pay .pay-box .Qi-cart {
     display: flex;
     width: 100%;
-    height: 100%;
+    height: 7%;
     justify-content: space-around;
     /* border: 1px solid rebeccapurple; */
 
@@ -83,91 +83,112 @@
     border-start-start-radius: 9px;
 }
 .pay .pay-box .box_center_checkout{
-    height: 100%;
+    height: 85%;
     width: 100%;
     /* border: 1px solid sandybrown; */
-    display: flex;
+    /* display: flex; */
 }
-
-.pay .pay-box .box_center_checkout .checkout_left{
+.pay .pay-box .box_center_checkout .box-ktra{
+    display: flex;
+    height: 80%;
+    width: 100%;
+}
+.pay .pay-box .box_center_checkout .box-ktra .checkout_left{
     /* border: 1px solid blue; */
     width: 50%;
     margin: 5px 5px;
     font-size: 15px;
 
 }
-.pay .pay-box .box_center_checkout .checkout_right{
-    /* border: 1px solid blue; */
-    /* overflow: hidden; */
-
+.pay .pay-box .box_center_checkout .box-ktra .checkout_right{
     width: 50%;
-    margin: 5px 5px;
+    height: 80%;
+    margin: 2px 2px;
 }
-.pay .pay-box .box_center_checkout .checkout_left .checkout_NameFull{
+.pay .pay-box .box_center_checkout .box-ktra .checkout_left .checkout_NameFull{
     /* border: 1px solid greenyellow; */
     display: flex;
     justify-content: center;
 
 }
-.pay .pay-box .box_center_checkout .checkout_left .checkout_NameFull .Namefull_label{
+.pay .pay-box .box_center_checkout .box-ktra .checkout_left .checkout_NameFull .Namefull_label{
     display: flex;
     flex-direction: column;
     align-items: center;
 
 
 }
-.pay .pay-box .box_center_checkout .checkout_left .checkout_NameFull .Namefull_label .name-all{
+.pay .pay-box .box_center_checkout .box-ktra .checkout_left .checkout_NameFull .Namefull_label .name-all{
     width: 90%;
     text-align: start;
 
 }
-.pay .pay-box .box_center_checkout .checkout_left .checkout_NameFull .Namefull_label input{
+.pay .pay-box .box_center_checkout .box-ktra .checkout_left .checkout_NameFull .Namefull_label input{
     width: 90%;
 }
 
-.pay .pay-box .box_center_checkout .checkout_left .checkout_all_input{
+.pay .pay-box .box_center_checkout .box-ktra .checkout_left .checkout_all_input{
     /* border: 1px solid rebeccapurple; */
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.pay .pay-box .box_center_checkout .checkout_left .checkout_all_input .col-ed{
+.pay .pay-box .box_center_checkout .box-ktra .checkout_left .checkout_all_input .col-ed{
     width: 95%;
     text-align: start;
 }
-.pay .pay-box .box_center_checkout .checkout_left .checkout_all_input input{
+.pay .pay-box .box_center_checkout .box-ktra .checkout_left .checkout_all_input input{
     width: 95%;
 
 }
-.pay .pay-box .box_center_checkout .checkout_right .checkuot_products{
+.pay .pay-box .box_center_checkout .box-ktra  .checkout_left .pay_checkout_NameFull {
+    display: flex;
+    /* border: 1px solid red; */
+    margin: 20px 5px;
+
+}
+.pay .pay-box .box_center_checkout .box-ktra .checkout_left .pay_checkout_NameFull .pay_radio{
+    margin: 5px 10px;
+    font-size: 15px;
+    font-weight: 600;
+}
+.pay .pay-box .box_center_checkout .box-ktra .checkout_left .pay_checkout_NameFull .pay_radio label{
+    margin-left: 5px;
+}
+.pay .pay-box .box_center_checkout .box-ktra .checkout_right .checkuot_products{
     display: flex;
     width: 100%;
-    height: 15%;
+    height: 10%;
+    margin: 5px 5px;
     /* border: 1px solid red; */
 }
-.pay .pay-box .box_center_checkout .checkout_right .checkuot_products .sol_rt1{
+.pay .pay-box .box_center_checkout .box-ktra .checkout_right .checkuot_products .sol_rt1{
     width: 100%;
     height: 100%;
+    background: rgb(26, 25, 25);
+    font-weight: 700;
+    margin: 0px 2px;
     /* border: 1px solid blueviolet; */
 }
-.pay .pay-box .box_center_checkout .checkout_right .checkuot_products .sol_rt1 p{
+.pay .pay-box .box_center_checkout .box-ktra .checkout_right .checkuot_products .sol_rt1 p{
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 2px 2px;
+    color: #fff;
+    font-size: 15px;
     /* border-bottom: 1px solid black; */
 
 }
-.pay .pay-box .box_center_checkout .checkout_right .checkuot_products .sol_rt2{
+.pay .pay-box .box_center_checkout .box-ktra .checkout_right .checkuot_products .sol_rt2{
     width: 100%;
     height: 100%;
     background: rgb(26, 25, 25);
-    margin: 0px 1px;
+    margin: 0px 2px;
     /* border: 1px solid blueviolet; */
 }
-.pay .pay-box .box_center_checkout .checkout_right .checkuot_products .sol_rt2 p{
+.pay .pay-box .box_center_checkout .box-ktra .checkout_right .checkuot_products .sol_rt2 p{
     width: 100%;
     height: 100%;
     display: flex;
@@ -175,14 +196,107 @@
     align-items: center;
     font-weight: 700;
     color: #fff;
+    font-size: 15px;
 
 }
-.pay .pay-box .cart-buynow {
+.pay .pay-box .box_center_checkout .box-ktra .checkout_right .checkuot_products .sol_rt3{
     width: 100%;
-    margin: 20px 10px;
+    height: 100%;
+    background: rgb(26, 25, 25);
+    margin: 0px 2px;
+    /* border: 1px solid blueviolet; */
+}
+.pay .pay-box .box_center_checkout .box-ktra .checkout_right .checkuot_products .sol_rt3 p{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    color: #fff;
+    font-size: 15px;
+
 }
 
-.pay .pay-box .cart-buynow button {
+
+.pay .pay-box .box_center_checkout .box-ktra .checkout_right .checkuot-voxmar{
+    overflow: scroll;
+    /* border: 1px solid rebeccapurple;  */
+    width: 100%;
+    height: 80%;
+
+}
+.pay .pay-box .box_center_checkout .box-ktra .checkout_right .checkuot-voxmar .checkuot_productsbt2{
+    display: flex;
+    width: 100%;
+    height: 15%;
+    margin-left: 10px;
+    border-bottom: 1px solid black;
+}
+.pay .pay-box .box_center_checkout .box-ktra .checkout_right .checkuot-voxmar .checkuot_productsbt2 .sol_rt1{
+    width: 100%;
+    height: 100%;
+    background: none;
+    /* font-weight: 700; */
+    margin: 0px 2px;
+    /* border: 1px solid blueviolet; */
+}
+.pay .pay-box .box_center_checkout .box-ktra .checkout_right .checkuot-voxmar .checkuot_productsbt2 .sol_rt1 p{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    font-size: 12px;
+
+    /* border-bottom: 1px solid black; */
+
+}
+.pay .pay-box .box_center_checkout .box-ktra .checkout_right .checkuot-voxmar .checkuot_productsbt2 .sol_rt2{
+    width: 100%;
+    height: 100%;
+    background: none;
+    margin: 0px 2px;
+    /* border: 1px solid blueviolet; */
+}
+.pay .pay-box .box_center_checkout .box-ktra .checkout_right .checkuot-voxmar .checkuot_productsbt2 .sol_rt2 p{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    color: #000;
+    font-size: 15px;
+
+}
+.pay .pay-box .box_center_checkout .box-ktra .checkout_right .checkuot_productsbt2 .sol_rt3{
+    width: 100%;
+    height: 100%;
+    background: none;
+    margin: 0px 2px;
+    /* border: 1px solid blueviolet; */
+}
+.pay .pay-box .box_center_checkout .box-ktra .checkout_right .checkuot_productsbt2 .sol_rt3 p{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* font-weight: 700; */
+    color: #000;
+    font-size: 15px;
+
+}
+
+
+.pay .pay-box .box_center_checkout .cart-buynow {
+    width: 100%;
+    margin: 0px 10px;
+}
+
+.pay .pay-box .box_center_checkout .cart-buynow button {
     padding: 7px 60px;
     border: none;
     border-radius: 5px;
@@ -191,7 +305,7 @@
     color: #fff;
 }
 
-.pay .pay-box .cart-buynow button:hover {
+.pay .pay-box .box_center_checkout .cart-buynow button:hover {
     background: #6b6868;
 }
 

@@ -24,7 +24,7 @@ class ApiLoginRequest extends FormRequest
     {
         return [
             //
-            'email' => ['required', 'string', 'email'],
+            'email' => ['required', 'string'],
             'password' => ['required', 'string'],
         ];
     }
@@ -32,7 +32,6 @@ class ApiLoginRequest extends FormRequest
     {
         return [
             'email.required' => 'The email field is required!',
-            'email.email' => 'The email',
             'password.required' => 'The password field is required!',
 
         ];

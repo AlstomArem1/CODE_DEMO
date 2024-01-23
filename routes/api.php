@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\Api\BlogController;
+use App\Http\Controllers\Api\CartController;
+use App\Http\Controllers\Api\ContactController;
+use App\Http\Controllers\Api\OrderController;
 use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\UsersController;
 use Illuminate\Http\Request;
@@ -22,16 +25,23 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::post('register',[UsersController::class, 'addRegister'])->name('register.add');
-Route::post('login',[UsersController::class, 'addLogin'])->name('login.add');
+Route::post('register', [UsersController::class, 'addRegister'])->name('register.add');
+Route::post('login', [UsersController::class, 'addLogin'])->name('login.add');
 
-Route::get('shop',[ProductController::class, 'productlist'])->name('shop.list');
-Route::get('blog3bit',[BlogController::class, 'bloglist3bit'])->name('blog3bit.list');
-Route::get('blogboxnews',[BlogController::class, 'blogNews'])->name('blogboxnews');
-Route::get('blog1bit',[BlogController::class, 'bloglist1bit'])->name('blog1bit.list');
-Route::get('bloglaptop',[BlogController::class, 'bloglaptoplist'])->name('bloglaptop.list');
-Route::get('bloglaptop2',[BlogController::class, 'bloglaptoplist2'])->name('bloglaptop2.list');
-Route::get('bloglaptop1bit',[BlogController::class, 'bloglaptoplist1bit'])->name('bloglaptop1bit.list');
+Route::post('savecart', [CartController::class, 'addsavecart'])->name('placeOrder.add');
 
 
+Route::middleware(['auth:sanctum'])->group(function () {
 
+    Route::post('logout', [UsersController::class, "addLogout"])->name('logout.add');
+    Route::get('shop', [ProductController::class, 'productlist'])->name('shop.list');
+    Route::get('blog3bit', [BlogController::class, 'bloglist3bit'])->name('blog3bit.list');
+    Route::get('blogboxnews', [BlogController::class, 'blogNews'])->name('blogboxnews');
+    Route::get('blog1bit', [BlogController::class, 'bloglist1bit'])->name('blog1bit.list');
+    Route::get('bloglaptop', [BlogController::class, 'bloglaptoplist'])->name('bloglaptop.list');
+    Route::get('bloglaptop2', [BlogController::class, 'bloglaptoplist2'])->name('bloglaptop2.list');
+    Route::get('bloglaptop1bit', [BlogController::class, 'bloglaptoplist1bit'])->name('bloglaptop1bit.list');
+    Route::post('placeorder', [OrderController::class, 'Creactplaceorder'])->name('placeOrder.add');
+    Route::post('contact', [ContactController::class, 'CreateContact'])->name('contact.add');
+
+});

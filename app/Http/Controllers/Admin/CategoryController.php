@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\AdminCategoryRequests;
 use App\Models\CategoryModel;
 use App\Models\ProductModel;
 use Illuminate\Http\Request;
@@ -50,7 +51,7 @@ class CategoryController extends Controller
 
     }
 
-    public function store(Request $request){
+    public function store(AdminCategoryRequests $request){
          //Eloquent
          $productCategory = new CategoryModel;
          $productCategory->name = $request->name;
@@ -70,7 +71,7 @@ class CategoryController extends Controller
         return view('admin.pages.categories.detail',['productCategory' => $productCategory]);
     }
 
-    public function update(Request $request, CategoryModel $productCategory){
+    public function update(AdminCategoryRequests $request, CategoryModel $productCategory){
         $productCategory->name = $request->name;
         $productCategory->status = $request->status;
         $productCategory->placeofbirth = $request->placeofbirth;

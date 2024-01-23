@@ -40,6 +40,7 @@
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Password</th>
+                                <th>Phone</th>
                                 <th>Created_at</th>
                               </tr>
                               </thead>
@@ -50,6 +51,7 @@
                                         <td>{{ $user->name }}</td>
                                         <td>{{ $user->email }}</td>
                                         <td>{{ $user->password }}</td>
+                                        <td>{{ $user->phone }}</td>
                                         <td>{{ $user->created_at }}</td>
                                     </tr>
                                 @endforeach
