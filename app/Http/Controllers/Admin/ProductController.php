@@ -54,7 +54,7 @@ class ProductController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(productRequests $request)
+    public function store(Request $request)
     {
         //
         if($request->hasFile('image')){
@@ -108,7 +108,7 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(productRequests $request, string $id)
+    public function updateproduct(Request $request, string $id)
     {
         //
         $product = DB::table('products')->find($id);
@@ -178,7 +178,7 @@ class ProductController extends Controller
         }
     }
 
-    public function Slug(productRequests $request){
+    public function Slug(Request $request){
         return response()->json(['slug' => Str::slug($request->name,'-')]);
     }
 

@@ -74,7 +74,7 @@
                                         <select name="blog_category_id" class="custom-select">
                                             <option value="">---Please Select---</option>
                                             @foreach ($blogCategories as $blogCategory)
-                                                <option value="{{ $blogCategory->id }}">{{ $blogCategory->name }}
+                                                <option {{ $blogCategory->id === $blog->blog_category_id ? "selected" : "" }} value="{{ $blogCategory->id }}">{{ $blogCategory->name }}
                                                 </option>
                                             @endforeach
                                         </select>
@@ -93,7 +93,7 @@
                                 </div>
                                 <!-- /.card-body -->
                                 <div class="card-footer">
-                                    <button onclick="return confirm('Are you sure')" type="submit" class="btn btn-primary">Create</button>
+                                    <button onclick="return confirm('Are you sure')" type="submit" class="btn btn-primary">Update</button>
                                 </div>
                                 @csrf
                             </form>

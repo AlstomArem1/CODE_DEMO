@@ -28,7 +28,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('register', [UsersController::class, 'addRegister'])->name('register.add');
 Route::post('login', [UsersController::class, 'addLogin'])->name('login.add');
 
-Route::post('savecart', [CartController::class, 'addsavecart'])->name('placeOrder.add');
+
 
 
 Route::middleware(['auth:sanctum'])->group(function () {
@@ -43,5 +43,5 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('bloglaptop1bit', [BlogController::class, 'bloglaptoplist1bit'])->name('bloglaptop1bit.list');
     Route::post('placeorder', [OrderController::class, 'Creactplaceorder'])->name('placeOrder.add');
     Route::post('contact', [ContactController::class, 'CreateContact'])->name('contact.add');
-
+    Route::post('savecart', [CartController::class, 'addsavecart'])->name('placeOrder.add');
 });

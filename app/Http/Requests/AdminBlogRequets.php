@@ -28,7 +28,7 @@ class AdminBlogRequets extends FormRequest
             'news' => 'required|string|max:255',
             'introduce' => 'required|string|min:10|max:255',
             'image' => 'required',
-            'blog_category_id ' => 'required',
+
 
         ];
     }
@@ -41,7 +41,7 @@ class AdminBlogRequets extends FormRequest
             'news.required' => 'The link field is required!',
             'introduce.required' => 'The introduce field is required!',
             'image.required' => 'The image field is required!',
-            'blog_category_id.required' => 'The stutas field is required!',
+
 
         ];
     }

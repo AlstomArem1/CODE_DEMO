@@ -62,6 +62,8 @@ Route::prefix('admin')->middleware('auth')->name('admin.')->group(function(){
      Route::post('product/Ckeditor-upload-image',[ProductController::class,'Uploadimage'])->name('product.ckedit.upload.image');
      //Slug
      Route::post('product/slug',[ProductController::class,'Slug'])->name('product.create.slug');
+     Route::post('product/update/{product}', [ProductController::class, 'updateproduct'])->name('updateproduct.update');
+
      //Edit//
      //update//
      //Restore

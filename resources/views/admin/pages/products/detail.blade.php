@@ -30,7 +30,7 @@
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
-                            <form role="form" method="post" action="{{ route('admin.product.update',['product'=> $product->id]) }}"
+                            <form role="form" method="post" action="{{ route('admin.updateproduct.update',['product'=> $product->id]) }}"
                                 enctype="multipart/form-data">
                                 <div class="card-body">
                                     <div class="form-group">
@@ -74,7 +74,7 @@
                                         <label>Status</label>
                                         <select name="status" class="custom-select">
                                             <option value="">---Please Select---</option>
-                                            <option {{ $product->status ? 'selected' : '' }} value="1">Open
+                                            <option {{ $product->status === '1' ? 'selected' : '' }} value="1">Open
                                             </option>
                                             <option {{ $product->status === '0' ? 'selected' : '' }} value="0">Close
                                             </option>
@@ -102,7 +102,7 @@
                                         <select name="product_category_id" class="custom-select">
                                             <option value="">---Please Select---</option>
                                             @foreach ($productCategories as $productCategory)
-                                                <option value="{{ $productCategory->id }}">{{ $productCategory->name }}
+                                                <option  {{ $productCategory->id === $product->product_category_id ? "selected" : "" }}  value="{{ $productCategory->id }}">{{ $productCategory->name }}
                                                 </option>
                                             @endforeach
                                         </select>
@@ -125,7 +125,7 @@
                                     <button type="submit" class="btn btn-primary">Update</button>
                                 </div>
                                 @csrf
-                                @method('put')
+
                             </form>
                         </div>
                     </div>
@@ -139,18 +139,9 @@
 
 @section('js-custom')
     <script>
-        ClassicEditor
-            .create(document.querySelector('#short_description'))
-            .catch(error => {
-                console.error(error);
-            });
+
         ClassicEditor
             .create(document.querySelector('#description'))
-            .catch(error => {
-                console.error(error);
-            });
-        ClassicEditor
-            .create(document.querySelector('#information'))
             .catch(error => {
                 console.error(error);
             });
